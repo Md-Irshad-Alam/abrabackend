@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Users = require('../Schema/User.schema');
 const config = require('../config');
 const jwt = require('jsonwebtoken');
@@ -9,7 +10,7 @@ let generateToken = (user) => {
       name,
       email,
     },
-    config.Secret_key
+    process.env.secretCode
   );
 };
 const IsvalidateEmail = (email) => {

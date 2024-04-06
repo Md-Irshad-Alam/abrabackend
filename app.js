@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const userRouter = require('./Routes/UserRoute');
 const categoryRoute = require('./Routes/CategoryRoute');
 const cors = require('cors');
 const produtroute = require('./Routes/Product');
-const config = require('./config');
+
 const mongoose = require('mongoose');
 const port = process.env.PORT || 6060;
 const app = express();
@@ -20,7 +21,9 @@ app.use('/public/uplods', express.static('Public/uploads'));
 
 app.listen(port, async (req, res) => {
   await mongoose
-    .connect(config.Connect_db_URL)
+    .connect(
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.otro2lv.mongodb.net/`
+    )
     .then((responce) => {
       console.log('server is connected with databse ');
     })
