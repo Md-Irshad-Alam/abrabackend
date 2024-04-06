@@ -21,8 +21,7 @@ const IsvalidateEmail = (email) => {
 const register = async (req, res) => {
   try {
     const { email } = req.body;
-    console.log(req.body);
-    console.log(req.file);
+
     const basepath = `${req.protocol}://${req.get('host')}/public/uplods/`;
     const filename = req.file.filename;
 
