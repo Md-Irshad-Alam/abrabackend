@@ -12,7 +12,7 @@ async function middleware(req, res, next) {
 
     if (token) {
       try {
-        jwt.verify(token, process.env.secretCode);
+        jwt.verify(token, '%$#%$^Hh');
 
         let user = jwt.decode(token);
 
