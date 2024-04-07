@@ -23,7 +23,7 @@ app.use('/public/uplods', express.static('Public/uploads'));
 app.listen(port, async (req, res) => {
   await mongoose
     .connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.otro2lv.mongodb.net/`
+      `mongodb+srv://almairsh0205:Vyl3diYmd3BTalhT@cluster0.otro2lv.mongodb.net/`
     )
     .then((responce) => {
       console.log('server is connected with databse ');
