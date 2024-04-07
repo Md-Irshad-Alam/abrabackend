@@ -1,7 +1,7 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const User = require('../Schema/User.schema');
-const config = require('../config');
+
 async function middleware(req, res, next) {
   const authorization = req.headers['authorization'];
 

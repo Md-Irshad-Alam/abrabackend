@@ -1,6 +1,6 @@
 require('dotenv').config();
 const Users = require('../Schema/User.schema');
-const config = require('../config');
+
 const jwt = require('jsonwebtoken');
 let generateToken = (user) => {
   let { _id, name, email } = user;
