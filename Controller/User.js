@@ -10,7 +10,7 @@ let generateToken = (user) => {
       name,
       email,
     },
-    process.env.secretCode
+   '%$#%$^Hh'
   );
 };
 const IsvalidateEmail = (email) => {
