@@ -82,9 +82,15 @@ async function getLoggedInUser(req, res) {
   try {
     const user = req.user;
 
-    return res.send({
-      data: user,
-    });
+    if (user) {
+      return res.send({
+        data: user,
+      });
+    } else {
+      return res.send({
+        data: 'No user found',
+      });
+    }
   } catch (err) {
     return res.status(500).send({
       error: 'Something went wrong',
@@ -93,10 +99,16 @@ async function getLoggedInUser(req, res) {
 }
 
 const updateUsers = async (req, res) => {
+  const { name } = req.body;
+
+  const basepath = `${req.protocol}://${req.get('host')}/public/uplods/`;
+  const filename = req.file.filename;
+  const avatar = `${basepath}${filename}`;
   const order = await Users.findByIdAndUpdate(
     req.params.id,
     {
-      isAdmin: true,
+      name,
+      avatar,
     },
     { new: true }
   );

@@ -19,6 +19,7 @@ app.use('/product', produtroute);
 // enable the static url
 app.use('/public/uplods', express.static('Public/uploads'));
 
+// `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.otro2lv.mongodb.net/`
 app.listen(port, async (req, res) => {
   await mongoose
     .connect(

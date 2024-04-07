@@ -9,6 +9,7 @@ const {
   ReadSingle,
   ReadCato,
 } = require('../Controller/Category');
+
 const middleware = require('../Middleware/middleware');
 const upload = require('../Middleware/MediaHelper');
 categoryRoute.post('/add', middleware, upload.single('image'), createCato);
@@ -20,5 +21,5 @@ categoryRoute.put(
 );
 categoryRoute.get('/', ReadCato);
 categoryRoute.get('/single/:id', ReadSingle);
-categoryRoute.delete('/:deleteId', middleware, deletecato);
+categoryRoute.delete('/:deleteId', deletecato);
 module.exports = categoryRoute;

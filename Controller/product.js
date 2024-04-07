@@ -18,6 +18,7 @@ const addproduct = async (req, res) => {
     ownerId,
   });
   await products.save();
+  res.json({ message: 'Product updated successfully', products });
 };
 const updateProduct = async (req, res) => {
   try {
